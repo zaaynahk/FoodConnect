@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FoodConnect Interface</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to FoodConnect!</h1>
+    <p>Connecting donors with those in need of food. We are here to help! Below you can find information about our donors and the food donations currently available.</p>
+    
+    <h2>Our Wonderful Donors</h2>
+    <ul>
+        <li>Healthy Veggies - Contact: 555-1016 - Location: 163 Veggie Path</li>
+        <li>Meat Masters - Contact: 555-1017 - Location: 174 Meat Corner</li>
+        <li>Sweet Fruits - Contact: 555-1015 - Location: 789 Fruitful Rd</li>
+    </ul>
+
+    <h2>Available Donations</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Donation ID</th>
+                <th>Donor</th>
+                <th>Food Type</th>
+                <th>Quantity</th>
+                <th>Expiration Date</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>15</td>
+                <td>Sweet Fruits</td>
+                <td>Oranges</td>
+                <td>100</td>
+                <td>2024-06-25</td>
+                <td>Available</td>
+            </tr>
+            <tr>
+                <td>16</td>
+                <td>Healthy Veggies</td>
+                <td>Organic Tomatoes</td>
+                <td>120</td>
+                <td>2024-06-10</td>
+                <td>Available</td>
+            </tr>
+            <tr>
+                <td>17</td>
+                <td>Meat Masters</td>
+                <td>Grass-Fed Beef</td>
+                <td>100</td>
+                <td>2024-07-20</td>
+                <td>Available</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <form id="donationForm">
+        <body><p>What kind of food are you looking for?</p> </body>
+        <label for="foodType">Food Type:</label>
+        <input type="text" id="foodType" name="foodType"><br><br>
+        <label for="quantity">Quantity:</label>
+        <input type="number" id="quantity" name="quantity" min="1"><br><br>
+        <button type="button" onclick="submitForm()">Submit</button>
+    </form>
+
+    <script>
+        function submitForm() {
+            var foodType = document.getElementById('foodType').value;
+            var quantity = document.getElementById('quantity').value;
+            alert('Transaction Complete. Your order for ' + quantity + ' units of ' + foodType + ' will be ready at the specified donor location.');
+            window.location.href = 'receipt.html';//needs to go here
+        }
+    </script>
+
+    <footer>
+        <p>FoodConnect is a non-profit platform aimed at reducing food waste and supporting communities.</p>
+    </footer>
+</body>
+</html>
+
+
+
+
+
+
+
+
